@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
   const apiKeyInput = document.getElementById('apiKey');
-  const projectNameInput = document.getElementById('projectName');
   const domainInput = document.getElementById('domain');
   const resultsDiv = document.getElementById('results');
 
@@ -14,9 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   // Load saved settings
-  chrome.storage.local.get(['openaiApiKey', 'projectName', 'currentDomain'], (data) => {
+  chrome.storage.local.get(['openaiApiKey', 'currentDomain'], (data) => {
     apiKeyInput.value = data.openaiApiKey || '';
-    projectNameInput.value = data.projectName || '';
     domainInput.value = data.currentDomain || '';
 
     // Check if prompts exist for the current domain
@@ -48,13 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Save API key and project name on input change
+  // Save API key on input change
   apiKeyInput.addEventListener('input', () => {
     chrome.storage.local.set({ openaiApiKey: apiKeyInput.value });
-  });
-
-  projectNameInput.addEventListener('input', () => {
-    chrome.storage.local.set({ projectName: projectNameInput.value });
   });
 
   // Save prompts automatically on text input change
@@ -108,8 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const result = data.choices[0].message.content.trim();
             const isTrue = result === '1';
             const resultElem = document.createElement('div');
-            resultElem.textContent = `${name}: ${result}`;
-            resultElem.style.color = isTrue ? 'green' : 'red';
+            resultElem.textContent = `${name}`;
+            resultElem.style.color = isTrue ? 'green' : 'red';  // Color based on result
             resultsDiv.appendChild(resultElem);
           })
           .catch(error => {
