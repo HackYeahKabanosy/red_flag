@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "Red Flag",
+    "version": "1.0",
+    "permissions": [
+      "storage",
+      "activeTab",
+      "scripting",
+      "tabs"
+    ],
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],  
+        "js": ["content.js"]
+      }
+    ]
+  }
+  

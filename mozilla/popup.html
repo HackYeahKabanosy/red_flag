@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <h1>Red Flag</h1>
+    <form id="settingsForm">
+      <label>OpenAI API Key:</label>
+      <input type="password" id="apiKey" required><br>
+
+      <label>Project Name:</label>
+      <input type="password" id="projectName" required><br>
+
+      <label>Domain:</label>
+      <input type="text" id="domain" disabled><br>
+
+      <label>Prompts:</label>
+      <div id="prompts">
+        <div>
+          <input type="text" id="name1" placeholder="Prompt 1 Name">
+          <input type="text" id="prompt1" placeholder="Prompt 1">
+        </div>
+        <div>
+          <input type="text" id="name2" placeholder="Prompt 2 Name">
+          <input type="text" id="prompt2" placeholder="Prompt 2">
+        </div>
+        <div>
+          <input type="text" id="name3" placeholder="Prompt 3 Name">
+          <input type="text" id="prompt3" placeholder="Prompt 3">
+        </div>
+        <div>
+          <input type="text" id="name4" placeholder="Prompt 4 Name">
+          <input type="text" id="prompt4" placeholder="Prompt 4">
+        </div>
+        <div>
+          <input type="text" id="name5" placeholder="Prompt 5 Name">
+          <input type="text" id="prompt5" placeholder="Prompt 5">
+        </div>
+      </div>
+
+      <button id="startAnalysis">Start Analysis</button>
+    </form>
+
+    <div id="results"></div>
+  </body>
+  <script src="popup.js"></script>
+</html>

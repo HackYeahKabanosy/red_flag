@@ -1,0 +1,59 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 10px;
+  width: 300px;
+}
+
+h1 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 0.9em;
+  margin-top: 10px;
+  display: block;
+}
+
+input[type="text"], input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#prompts div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+#prompts input {
+  width: 48%;
+}
+
+#results {
+  margin-top: 15px;
+}
+
+#results div {
+  margin-bottom: 5px;
+}
