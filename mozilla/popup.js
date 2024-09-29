@@ -76,9 +76,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const textContent = response.content;
         const prompts = promptInputs.map(input => ({
-          name: input.name.value,
-          prompt: input.prompt.value
-        }));
+          name: input.name.value.trim(),
+          prompt: input.prompt.value.trim()
+        })).filter(p => p.prompt !== "");  // Only include non-empty prompts
+
+        if (prompts.length === 0) {
+          resultsDiv.innerHTML = 'No valid prompts to analyze.';
+          return;
+        }
 
         prompts.forEach(({ name, prompt }) => {
           const requestBody = {
