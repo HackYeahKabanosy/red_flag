@@ -27,7 +27,7 @@ The project is organized as follows:
 
 1. Download or clone the repository:
     ```bash
-    git clone https://github.com/your-repo/security-plugin.git
+    git clone https://github.com/your-repo/red_flag.git
     ```
 
 2. Load the extension into Firefox:
